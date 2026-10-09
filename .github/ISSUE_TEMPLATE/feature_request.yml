@@ -1,0 +1,23 @@
+name: Feature request
+description: Suggest a focused improvement to Codex Manager.
+title: "[Feature] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: Describe the current behavior and who it affects. Do not include private account details.
+    validations:
+      required: true
+  - type: textarea
+    id: desired
+    attributes:
+      label: Desired behavior
+      description: Explain the improvement and any relevant constraints.
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: How would you verify it works?
+      description: Suggest observable results or examples using fictional data.

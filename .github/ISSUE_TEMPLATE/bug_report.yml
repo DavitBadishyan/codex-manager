@@ -1,0 +1,42 @@
+name: Bug report
+description: Report a reproducible Codex Manager problem using redacted or fictional data.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not attach token files, local account folders, or unredacted screenshots/logs. For a suspected security vulnerability, use SECURITY.md instead of a public issue.
+  - type: input
+    id: version
+    attributes:
+      label: Codex Manager version
+      description: Include the release version and whether you installed from a ZIP.
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+      description: Windows 10 or 11 and build, if known.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Use fictional account names and omit personal details.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and redacted error
+      description: Describe what happened. Never include credentials or authentication file contents.
+    validations:
+      required: true

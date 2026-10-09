@@ -1,0 +1,25 @@
+name: Windows validation
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run isolated PowerShell 5.1 tests
+        shell: powershell
+        run: .\Test.ps1
+      - name: Build allowlisted release and SHA256
+        shell: powershell
+        run: .\Build-Release.ps1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: CodexManager-windows
+          path: |
+            dist/*.zip
+            dist/*.sha256
+          if-no-files-found: error

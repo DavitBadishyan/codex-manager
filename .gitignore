@@ -1,0 +1,21 @@
+# Runtime credentials, sessions, caches, and local test fixtures must never be committed.
+profiles/
+accounts/
+outputs/
+dist/
+tests/dummy-*/
+tests/install-test-*/
+**/auth.json
+**/auth.json.*
+**/dashboard.json
+**/state.json
+**/pending.json
+**/invalid-session.json
+**/.codex-manager-install
+*.log
+*.tmp
+*.atomic-backup
+*.before-*
+*.previous
+.env
+.env.*
