@@ -16,7 +16,7 @@ Codex Manager is an open-source Windows companion for the official Codex desktop
 - Import the current desktop login on first use when one is available.
 - Refresh all saved accounts to compare remaining five-hour and weekly usage, reset dates and countdowns, and available credits.
 - Show session status and available active-until dates. These dates are not a guaranteed next billing date.
-- Switch the official desktop app with a graceful restart, saving the outgoing account's latest refresh tokens first.
+- Switch the official desktop app with a restart, preserving the outgoing account's latest refresh tokens before replacing its login.
 - Use a dark dashboard with zoom controls: **Ctrl + mouse wheel**, **Ctrl + +**, **Ctrl + −**, and **Ctrl + 0** to reset.
 
 Account sessions can expire or be revoked. Reconnect an account when sign-in is required. Usage and credits depend on what OpenAI returns for that account; unavailable data is not a zero balance.
@@ -31,7 +31,7 @@ You need **Windows 10 or 11**, **Windows PowerShell 5.1**, and the official **Op
 4. Open the **Codex Manager** shortcut.
 5. Use **Add Account** to sign in to another account, then refresh and choose the account you want to switch to.
 
-Finish or pause work in Codex before switching: the desktop app must restart. See the [step-by-step user guide](docs/USER_GUIDE.md) for sign-in, usage interpretation, and troubleshooting.
+Finish or pause work in Codex before switching: the desktop app must restart. The manager requests a normal shutdown, then may force-close remaining Codex processes after 12 seconds. See the [step-by-step user guide](docs/USER_GUIDE.md) for sign-in, usage interpretation, and troubleshooting.
 
 The release contains unsigned PowerShell scripts. Its launcher uses `ExecutionPolicy Bypass` for its bundled script process; it does not change your machine's permanent execution policy. Organization policies may still block it. On a managed computer, ask your administrator about approved use; do not disable managed controls.
 

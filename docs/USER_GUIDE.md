@@ -44,9 +44,9 @@ An unavailable value means the service did not provide a usable value or the req
 
 ## Switch the desktop account
 
-Finish or pause ongoing work in Codex first. Select the saved account and use its switch action. Codex Manager saves the outgoing account's latest refresh tokens, requests a graceful desktop shutdown, installs the chosen account session, and restarts the official Codex desktop app.
+Finish or pause ongoing work in Codex first. Select the saved account and use its switch action. Codex Manager requests a normal desktop shutdown and may force-close remaining Codex processes after 12 seconds. After shutdown, it saves the outgoing account's latest refresh tokens, installs the chosen account session, and restarts the official Codex desktop app.
 
-Confirm the account shown in the restarted desktop app before starting more work. If Codex cannot close gracefully, address the open app state and retry; do not assume a switch completed because you clicked the button.
+Confirm the account shown in the restarted desktop app before starting more work. If Codex processes cannot be stopped, the manager reports a failure and preserves the active login. Address the open app state and retry; do not assume a switch completed because you clicked the button.
 
 Refresh tokens can change after use. Keeping the outgoing session synchronized is necessary so the saved account remains usable later. Avoid editing authentication files while either app is running.
 
