@@ -75,7 +75,12 @@ Do not add overlapping ranges together. Unique visitors across ranges are not a 
 With GitHub CLI installed and authenticated, this read-only command lists release asset counts:
 
 ```powershell
-gh api --paginate repos/DavitBadishyan/codex-manager/releases --jq '.[] | .tag_name as $tag | .assets[] | {release: $tag, asset: .name, downloads: .download_count}'
+$releases = gh api repos/DavitBadishyan/codex-manager/releases | ConvertFrom-Json
+foreach ($release in $releases) {
+    foreach ($asset in $release.assets) {
+        [pscustomobject]@{Release=$release.tag_name;Asset=$asset.name;Downloads=$asset.download_count}
+    }
+}
 ```
 
 Suggested private record:
